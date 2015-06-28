@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.Set;
 import utfpr.ct.dainf.if62c.pratica.ComparadorMapa;
@@ -45,13 +46,12 @@ public class Pratica72 {
         File file_in = cont.getFile();
         String str_in = file_in.getPath();
         
-        BufferedWriter bw = new BufferedWriter(new FileWriter(str_in+".out"));
-
-       for (Object j: lista) {
-        
-            entries = palavras.entrySet();
-            for (Map.Entry<String, Integer> entry: entries) {
-                    if(entry.getValue() == j) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(str_in+".out"))) {
+            for (Object j: lista) {
+                
+                entries = palavras.entrySet();
+                for (Map.Entry<String, Integer> entry: entries) {
+                    if(Objects.equals(entry.getValue(), j)) {
                         bw.write(entry.getKey() + "," + entry.getValue());
                         bw.newLine();
                         palavras.remove(entry.getKey());
@@ -60,7 +60,6 @@ public class Pratica72 {
                 }
 
             }
-        
-        bw.close();
+        }
     }
 }

@@ -11,7 +11,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
@@ -19,8 +18,8 @@ import java.util.StringTokenizer;
  * @author a1656856
  */
 public class ContadorPalavras {
-    BufferedReader reader;
-    String file;
+    private final BufferedReader reader;
+    private final String file;
     
     
     public ContadorPalavras(String file) throws FileNotFoundException {
