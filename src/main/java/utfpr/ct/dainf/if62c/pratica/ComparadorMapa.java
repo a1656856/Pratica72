@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  *
- * @author a1608355
+ * @author a1656856
  */
 public class ComparadorMapa implements Comparator<Map.Entry<String, Integer>>{
 

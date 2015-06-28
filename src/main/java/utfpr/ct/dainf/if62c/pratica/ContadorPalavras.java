@@ -16,7 +16,7 @@ import java.util.StringTokenizer;
 
 /**
  *
- * @author a1608355
+ * @author a1656856
  */
 public class ContadorPalavras {
     BufferedReader reader;
